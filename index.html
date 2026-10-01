@@ -2,818 +2,1462 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sajawat Hampers | Premium Festive Gifting</title>
+    <meta charset="UTF-8">
 
     <meta
-        name="description"
-        content="Premium festive hampers for Diwali, Holi, Dussehra, Navratri, Raksha Bandhan and Christmas. Custom and corporate gifting available."
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>
+        Order Now | Sajawat Hampers
+    </title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        .order-page {
+            min-height: 100vh;
+            padding: 50px 0 80px;
+            background: #fffaf3;
+        }
+
+        .order-wrapper {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #9b1f2d;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .order-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .order-logo {
+            width: 150px;
+            max-height: 70px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .order-header h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(38px, 5vw, 58px);
+            color: #4b1119;
+        }
+
+        .order-header p {
+            color: #806967;
+            margin-top: 8px;
+        }
+
+        .order-layout {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .order-card {
+            background: #fff;
+            border: 1px solid #eadcca;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 15px 40px #4b111912;
+        }
+
+        .order-card h2 {
+            font-family: "Playfair Display", serif;
+            color: #4b1119;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: #a27425;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .14em;
+            margin: 28px 0 15px;
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: #4b1119;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #ddcdbd;
+            background: #fffdf9;
+            border-radius: 4px;
+            padding: 13px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #9b1f2d;
+        }
+
+        .summary {
+            position: sticky;
+            top: 105px;
+        }
+
+        .summary-product {
+            background: #f8ecdd;
+            border: 1px solid #ead5b7;
+            padding: 22px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .summary-icon {
+            font-size: 60px;
+            margin-bottom: 8px;
+        }
+
+        .summary-product h3 {
+            font-family: "Playfair Display", serif;
+            color: #4b1119;
+            font-size: 22px;
+        }
+
+        .summary-product p {
+            color: #806967;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            border-bottom: 1px solid #eadcca;
+            padding: 13px 0;
+            font-size: 13px;
+        }
+
+        .summary-row strong {
+            color: #4b1119;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            color: #8e1825;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .whatsapp-order {
+            width: 100%;
+            border: 0;
+            background: #198754;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .whatsapp-order:hover {
+            background: #157347;
+        }
+
+        .order-note {
+            text-align: center;
+            color: #8b7771;
+            font-size: 11px;
+            margin-top: 15px;
+        }
+
+        .quantity-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-box button {
+            width: 43px;
+            height: 44px;
+            border: 1px solid #ddcdbd;
+            background: #f5e9dc;
+            font-size: 18px;
+        }
+
+        .quantity-box input {
+            width: 65px;
+            height: 44px;
+            text-align: center;
+            border-radius: 0;
+        }
+
+        .success-box {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: #e9f7ef;
+            color: #176b39;
+            border: 1px solid #b9e3ca;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 800px) {
+
+            .order-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                position: static;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .order-card {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- ==============================
-         ANNOUNCEMENT
-    =============================== -->
+<div class="order-page">
 
-    <div class="announcement">
-        ✨ Festive gifting made beautiful
-        <span>•</span>
-        Custom hampers available
-        <span>•</span>
-        Pan-India delivery
-    </div>
+    <div class="order-wrapper">
 
-
-    <!-- ==============================
-         HEADER
-    =============================== -->
-
-    <header class="header">
-
-        <div class="container nav-container">
-
-            <a href="index.html" class="logo-link">
-                <img
-                    src="assets/logo.png"
-                    alt="Sajawat Hampers"
-                    class="logo"
-                >
-            </a>
-
-            <nav class="nav" id="mainNav">
-
-                <a href="#collections">Collections</a>
-
-                <a href="#bestsellers">Best Sellers</a>
-
-                <a href="#custom">Custom Hampers</a>
-
-                <a href="#corporate">Corporate Gifting</a>
-
-                <a href="#story">Our Story</a>
-
-                <a href="order.html" class="nav-order">
-                    Order Now
-                </a>
-
-            </nav>
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← Back to Sajawat Hampers
+        </a>
 
 
-            <div class="header-actions">
+        <div class="order-header">
 
-                <button
-                    class="icon-btn"
-                    id="searchBtn"
-                    aria-label="Search"
-                >
-                    🔍
-                </button>
+            <img
+                src="assets/logo.png"
+                alt="Sajawat Hampers"
+                class="order-logo"
+            >
 
-                <button
-                    class="cart-button"
-                    id="cartBtn"
-                >
-                    🛍
-                    <span id="cartCount">0</span>
-                </button>
+            <p class="eyebrow">
+                FESTIVE GIFTING
+            </p>
 
-                <button
-                    class="menu-btn"
-                    id="menuBtn"
-                    aria-label="Menu"
-                >
-                    ☰
-                </button>
+            <h1>
+                Place Your Order
+            </h1>
 
-            </div>
+            <p>
+                Fill in your details and we'll
+                confirm your order on WhatsApp.
+            </p>
 
         </div>
 
-    </header>
+
+        <div class="order-layout">
 
 
-    <!-- ==============================
-         HERO
-    =============================== -->
+            <!-- =================================
+                 FORM
+            ================================== -->
 
-    <main>
+            <div class="order-card">
 
-        <section class="hero">
-
-            <div class="container hero-grid">
-
-                <div class="hero-content">
-
-                    <p class="eyebrow">
-                        PREMIUM FESTIVE GIFTING
-                    </p>
-
-                    <h1>
-                        Gifts that turn
-                        <span>moments</span>
-                        into memories.
-                    </h1>
-
-                    <p class="hero-text">
-                        Thoughtfully curated festive hampers,
-                        beautifully packed and made to leave
-                        a lasting impression.
-                    </p>
+                <h2>
+                    Order Details
+                </h2>
 
 
-                    <div class="hero-buttons">
+                <form id="orderForm">
 
-                        <a
-                            href="#collections"
-                            class="btn btn-primary"
-                        >
-                            Explore Hampers
-                        </a>
 
-                        <a
-                            href="order.html"
-                            class="btn btn-outline"
-                        >
-                            🛍 Order Now
-                        </a>
-
+                    <div class="section-title">
+                        01 · CUSTOMER DETAILS
                     </div>
 
 
-                    <div class="trust-row">
+                    <div class="form-grid">
 
-                        <span>✓ Premium Packaging</span>
+                        <div class="form-group">
 
-                        <span>✓ Pan-India Delivery</span>
+                            <label>
+                                Full Name *
+                            </label>
 
-                        <span>✓ Custom Gifting</span>
+                            <input
+                                type="text"
+                                id="customerName"
+                                placeholder="Your full name"
+                                required
+                            >
 
-                    </div>
-
-                </div>
-
-
-                <div class="hero-art">
-
-                    <div class="hero-card">
-
-                        <div class="hero-icon">
-                            🪔
                         </div>
 
-                        <div>
-                            <small>
-                                SAJAWAT HAMPERS
-                            </small>
 
-                            <strong>
-                                Festive Collection
-                            </strong>
+                        <div class="form-group">
+
+                            <label>
+                                WhatsApp / Mobile *
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customerPhone"
+                                placeholder="10 digit number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="customerEmail"
+                                placeholder="your@email.com"
+                            >
+
                         </div>
 
                     </div>
 
 
-                    <div class="floating-gift gift-one">
+                    <div class="section-title">
+                        02 · HAMper DETAILS
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Festival *
+                            </label>
+
+                            <select
+                                id="festival"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Festival
+                                </option>
+
+                                <option value="Diwali">
+                                    Diwali
+                                </option>
+
+                                <option value="Holi">
+                                    Holi
+                                </option>
+
+                                <option value="Dussehra">
+                                    Dussehra
+                                </option>
+
+                                <option value="Navratri">
+                                    Navratri
+                                </option>
+
+                                <option value="Raksha Bandhan">
+                                    Raksha Bandhan
+                                </option>
+
+                                <option value="Christmas">
+                                    Christmas
+                                </option>
+
+                                <option value="Custom Hamper">
+                                    Custom Hamper
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Hamper *
+                            </label>
+
+                            <select
+                                id="hamper"
+                                required
+                            >
+
+                                <option value="">
+                                    Select Hamper
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Quantity *
+                            </label>
+
+                            <div class="quantity-box">
+
+                                <button
+                                    type="button"
+                                    id="minus"
+                                >
+                                    −
+                                </button>
+
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    value="1"
+                                    min="1"
+                                    max="100"
+                                    readonly
+                                >
+
+                                <button
+                                    type="button"
+                                    id="plus"
+                                >
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Delivery Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="deliveryDate"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="section-title">
+                        03 · DELIVERY ADDRESS
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label>
+                                Full Address *
+                            </label>
+
+                            <textarea
+                                id="address"
+                                placeholder="House / Flat No., Street, Area"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                City *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="City"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Pincode *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                placeholder="6 digit pincode"
+                                pattern="[0-9]{6}"
+                                maxlength="6"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="section-title">
+                        04 · PERSONAL MESSAGE
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Gift Message
+                        </label>
+
+                        <textarea
+                            id="giftMessage"
+                            placeholder="Write your personal message..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="whatsapp-order"
+                    >
+                        🟢 Confirm Order on WhatsApp
+                    </button>
+
+
+                    <div
+                        class="success-box"
+                        id="successBox"
+                    >
+                        Opening WhatsApp with your
+                        complete order details...
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- =================================
+                 SUMMARY
+            ================================== -->
+
+            <div class="order-card summary">
+
+                <h2>
+                    Your Order
+                </h2>
+
+
+                <div class="summary-product">
+
+                    <div
+                        class="summary-icon"
+                        id="summaryIcon"
+                    >
                         🎁
                     </div>
 
-                    <div class="floating-gift gift-two">
-                        ✨
-                    </div>
-
-                    <div class="floating-gift gift-three">
-                        🌸
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             FESTIVALS
-        =============================== -->
-
-        <section class="festivals" id="collections">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        SHOP BY FESTIVAL
-                    </p>
-
-                    <h2>
-                        Celebrate every occasion
-                    </h2>
-
-                    <p>
-                        Discover hampers designed for
-                        India's most beautiful celebrations.
-                    </p>
-
-                </div>
-
-
-                <div class="festival-tabs">
-
-                    <button
-                        class="festival-tab active"
-                        data-festival="Diwali"
-                    >
-                        🪔 Diwali
-                    </button>
-
-                    <button
-                        class="festival-tab"
-                        data-festival="Holi"
-                    >
-                        🌈 Holi
-                    </button>
-
-                    <button
-                        class="festival-tab"
-                        data-festival="Dussehra"
-                    >
-                        🏹 Dussehra
-                    </button>
-
-                    <button
-                        class="festival-tab"
-                        data-festival="Navratri"
-                    >
-                        🌺 Navratri
-                    </button>
-
-                    <button
-                        class="festival-tab"
-                        data-festival="Raksha Bandhan"
-                    >
-                        🎀 Raksha Bandhan
-                    </button>
-
-                    <button
-                        class="festival-tab"
-                        data-festival="Christmas"
-                    >
-                        🎄 Christmas
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             PRODUCTS
-        =============================== -->
-
-        <section class="products-section" id="bestsellers">
-
-            <div class="container">
-
-                <div class="products-top">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            CURATED FOR YOU
-                        </p>
-
-                        <h2 id="productHeading">
-                            Diwali Hampers
-                        </h2>
-
-                    </div>
-
-
-                    <select id="sortProducts">
-
-                        <option value="featured">
-                            Featured
-                        </option>
-
-                        <option value="low">
-                            Price: Low to High
-                        </option>
-
-                        <option value="high">
-                            Price: High to Low
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div
-                    class="product-grid"
-                    id="productGrid"
-                ></div>
-
-
-                <div class="view-all">
-
-                    <a
-                        href="order.html"
-                        class="btn btn-primary"
-                    >
-                        Order Your Hamper
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             CUSTOM
-        =============================== -->
-
-        <section class="custom-section" id="custom">
-
-            <div class="container">
-
-                <div class="custom-box">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            MAKE IT PERSONAL
-                        </p>
-
-                        <h2>
-                            Create your own hamper
-                        </h2>
-
-                        <p>
-                            Choose your products, packaging,
-                            colours and personal message.
-                            Create something truly unique.
-                        </p>
-
-                        <a
-                            href="order.html?custom=true"
-                            class="btn btn-light"
-                        >
-                            Create My Hamper
-                        </a>
-
-                    </div>
-
-                    <div class="custom-art">
-                        🎁
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             FEATURES
-        =============================== -->
-
-        <section class="features">
-
-            <div class="container feature-grid">
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ✨
-                    </div>
-
-                    <h3>
-                        Premium Quality
+                    <h3 id="summaryName">
+                        Select a hamper
                     </h3>
 
-                    <p>
-                        Carefully selected products
-                        and elegant packaging.
+                    <p id="summaryFestival">
+                        Your selection will appear here.
                     </p>
 
                 </div>
 
 
-                <div class="feature">
+                <div class="summary-row">
 
-                    <div class="feature-icon">
-                        🎁
-                    </div>
+                    <span>
+                        Price
+                    </span>
 
-                    <h3>
-                        Beautiful Packaging
-                    </h3>
-
-                    <p>
-                        Every hamper is prepared
-                        with attention to detail.
-                    </p>
+                    <strong id="summaryPrice">
+                        ₹0
+                    </strong>
 
                 </div>
 
 
-                <div class="feature">
+                <div class="summary-row">
 
-                    <div class="feature-icon">
-                        🚚
-                    </div>
+                    <span>
+                        Quantity
+                    </span>
 
-                    <h3>
-                        Pan-India Delivery
-                    </h3>
-
-                    <p>
-                        Send your gifts to loved ones
-                        across India.
-                    </p>
+                    <strong id="summaryQuantity">
+                        1
+                    </strong>
 
                 </div>
 
 
-                <div class="feature">
+                <div class="summary-total">
 
-                    <div class="feature-icon">
-                        💌
-                    </div>
+                    <span>
+                        Total
+                    </span>
 
-                    <h3>
-                        Personal Touch
-                    </h3>
-
-                    <p>
-                        Add your own message to
-                        make every gift special.
-                    </p>
+                    <strong id="summaryTotal">
+                        ₹0
+                    </strong>
 
                 </div>
 
-            </div>
 
-        </section>
-
-
-        <!-- ==============================
-             CORPORATE
-        =============================== -->
-
-        <section class="corporate" id="corporate">
-
-            <div class="container">
-
-                <div class="corporate-box">
-
-                    <p class="eyebrow">
-                        FOR BUSINESSES
-                    </p>
-
-                    <h2>
-                        Corporate Gifting
-                    </h2>
-
-                    <p>
-                        Premium employee gifts, client hampers,
-                        festive gifting and bulk orders.
-                    </p>
-
-                    <a
-                        href="order.html?corporate=true"
-                        class="btn btn-primary"
-                    >
-                        Enquire Now
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             STORY
-        =============================== -->
-
-        <section class="story" id="story">
-
-            <div class="container story-grid">
-
-                <div class="story-art">
-                    🪔
-                </div>
-
-                <div>
-
-                    <p class="eyebrow">
-                        OUR STORY
-                    </p>
-
-                    <h2>
-                        Gifting, with a little more heart.
-                    </h2>
-
-                    <p>
-                        At Sajawat Hampers, we believe a gift
-                        should feel personal. Every hamper is
-                        thoughtfully curated to bring together
-                        beautiful products, elegant presentation
-                        and the emotion behind the occasion.
-                    </p>
-
-                    <p>
-                        From intimate celebrations to corporate
-                        gifting, we make every moment memorable.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             NEWSLETTER
-        =============================== -->
-
-        <section class="newsletter">
-
-            <div class="container">
-
-                <div class="newsletter-box">
-
-                    <p class="eyebrow">
-                        STAY IN THE LOOP
-                    </p>
-
-                    <h2>
-                        Discover our festive collections.
-                    </h2>
-
-                    <form id="newsletterForm">
-
-                        <input
-                            type="email"
-                            id="newsletterEmail"
-                            placeholder="Your email address"
-                            required
-                        >
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary"
-                        >
-                            Subscribe
-                        </button>
-
-                    </form>
-
-                    <p id="newsletterMessage"></p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ==============================
-         FOOTER
-    =============================== -->
-
-    <footer class="footer">
-
-        <div class="container footer-grid">
-
-            <div>
-
-                <img
-                    src="assets/logo.png"
-                    alt="Sajawat Hampers"
-                    class="footer-logo"
-                >
-
-                <p>
-                    Premium festive gifting,
-                    thoughtfully made.
+                <p class="order-note">
+                    Your order will be sent to Sajawat
+                    Hampers through WhatsApp for confirmation.
                 </p>
 
             </div>
 
-
-            <div>
-
-                <h4>
-                    Shop
-                </h4>
-
-                <a href="#collections">
-                    Collections
-                </a>
-
-                <a href="#bestsellers">
-                    Best Sellers
-                </a>
-
-                <a href="order.html">
-                    Order Now
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Gifting
-                </h4>
-
-                <a href="#custom">
-                    Custom Hampers
-                </a>
-
-                <a href="#corporate">
-                    Corporate Gifting
-                </a>
-
-                <a href="order.html">
-                    Bulk Orders
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h4>
-                    Connect
-                </h4>
-
-                <a
-                    href="https://instagram.com/sajawat.hampers"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Instagram
-                </a>
-
-                <a href="order.html">
-                    WhatsApp
-                </a>
-
-                <a href="mailto:hello@sajawathampers.com">
-                    Email
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            © 2026 Sajawat Hampers.
-            All rights reserved.
-
-        </div>
-
-    </footer>
-
-
-    <!-- ==============================
-         CART DRAWER
-    =============================== -->
-
-    <div
-        class="overlay"
-        id="overlay"
-    ></div>
-
-
-    <aside
-        class="cart-drawer"
-        id="cartDrawer"
-    >
-
-        <div class="drawer-header">
-
-            <h2>
-                Your Cart
-            </h2>
-
-            <button
-                id="closeCart"
-                class="close-btn"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div
-            class="cart-items"
-            id="cartItems"
-        ></div>
-
-
-        <div class="cart-footer">
-
-            <div class="cart-total">
-
-                <span>
-                    Total
-                </span>
-
-                <strong id="cartTotal">
-                    ₹0
-                </strong>
-
-            </div>
-
-
-            <button
-                id="cartCheckout"
-                class="btn btn-primary full-btn"
-            >
-                Order on WhatsApp
-            </button>
-
-            <a
-                href="order.html"
-                class="btn btn-outline full-btn"
-            >
-                Open Order Form
-            </a>
-
-        </div>
-
-    </aside>
-
-
-    <!-- ==============================
-         SEARCH
-    =============================== -->
-
-    <div
-        class="search-modal"
-        id="searchModal"
-    >
-
-        <div class="search-box">
-
-            <button
-                class="close-btn"
-                id="closeSearch"
-            >
-                ×
-            </button>
-
-            <h2>
-                Search Hampers
-            </h2>
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search for a hamper..."
-            >
-
-            <div id="searchResults"></div>
-
         </div>
 
     </div>
 
+</div>
 
-    <script src="script.js"></script>
+
+<script>
+
+/* =========================================================
+   WHATSAPP NUMBER
+========================================================= */
+
+const WHATSAPP_NUMBER = "919999999999";
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+const orderProducts = [
+
+    {
+        festival: "Diwali",
+        name: "Diwali Royal Glow",
+        price: 2499,
+        icon: "🪔"
+    },
+
+    {
+        festival: "Diwali",
+        name: "Shubh Deep Hamper",
+        price: 1599,
+        icon: "🎁"
+    },
+
+    {
+        festival: "Diwali",
+        name: "Lakshmi Luxe Box",
+        price: 3299,
+        icon: "✨"
+    },
+
+    {
+        festival: "Diwali",
+        name: "Diwali Mithaas",
+        price: 1199,
+        icon: "🍬"
+    },
+
+    {
+        festival: "Holi",
+        name: "Holi Celebration Box",
+        price: 1999,
+        icon: "🌈"
+    },
+
+    {
+        festival: "Holi",
+        name: "Rang Barse Hamper",
+        price: 1499,
+        icon: "🎨"
+    },
+
+    {
+        festival: "Holi",
+        name: "Holi Premium Box",
+        price: 2799,
+        icon: "🌸"
+    },
+
+    {
+        festival: "Holi",
+        name: "Holi Sweet Treats",
+        price: 999,
+        icon: "🍭"
+    },
+
+    {
+        festival: "Dussehra",
+        name: "Vijay Utsav Hamper",
+        price: 1699,
+        icon: "🏹"
+    },
+
+    {
+        festival: "Dussehra",
+        name: "Shubh Vijay Box",
+        price: 2199,
+        icon: "✨"
+    },
+
+    {
+        festival: "Dussehra",
+        name: "Festive Blessings",
+        price: 1399,
+        icon: "🪔"
+    },
+
+    {
+        festival: "Dussehra",
+        name: "Royal Dussehra",
+        price: 2999,
+        icon: "🎁"
+    },
+
+    {
+        festival: "Navratri",
+        name: "Navratri Blessings",
+        price: 1499,
+        icon: "🌺"
+    },
+
+    {
+        festival: "Navratri",
+        name: "Divine Celebration",
+        price: 1999,
+        icon: "🙏"
+    },
+
+    {
+        festival: "Navratri",
+        name: "Shakti Premium",
+        price: 2799,
+        icon: "🌸"
+    },
+
+    {
+        festival: "Navratri",
+        name: "Garba Treat Box",
+        price: 1199,
+        icon: "💃"
+    },
+
+    {
+        festival: "Raksha Bandhan",
+        name: "Rakhi Love Hamper",
+        price: 1299,
+        icon: "🎀"
+    },
+
+    {
+        festival: "Raksha Bandhan",
+        name: "Brother's Box",
+        price: 1599,
+        icon: "🎁"
+    },
+
+    {
+        festival: "Raksha Bandhan",
+        name: "Sister's Luxe Hamper",
+        price: 2299,
+        icon: "💝"
+    },
+
+    {
+        festival: "Raksha Bandhan",
+        name: "Rakhi Sweet Box",
+        price: 899,
+        icon: "🍫"
+    },
+
+    {
+        festival: "Christmas",
+        name: "Merry Luxe Hamper",
+        price: 2199,
+        icon: "🎄"
+    },
+
+    {
+        festival: "Christmas",
+        name: "Christmas Cheer Box",
+        price: 1499,
+        icon: "🎅"
+    },
+
+    {
+        festival: "Christmas",
+        name: "Winter Luxury",
+        price: 2999,
+        icon: "❄️"
+    },
+
+    {
+        festival: "Christmas",
+        name: "Santa Sweet Box",
+        price: 1099,
+        icon: "🍪"
+    }
+
+];
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const festival =
+    document.getElementById("festival");
+
+const hamper =
+    document.getElementById("hamper");
+
+const quantity =
+    document.getElementById("quantity");
+
+
+/* =========================================================
+   FORMAT
+========================================================= */
+
+function money(value) {
+
+    return "₹" +
+        Number(value).toLocaleString("en-IN");
+
+}
+
+
+/* =========================================================
+   POPULATE HAMPERS
+========================================================= */
+
+function populateHampers(selectedFestival) {
+
+    hamper.innerHTML = `
+
+        <option value="">
+            Select Hamper
+        </option>
+
+    `;
+
+
+    const matches =
+        orderProducts.filter(
+            product =>
+                product.festival === selectedFestival
+        );
+
+
+    matches.forEach(product => {
+
+        const option =
+            document.createElement("option");
+
+
+        option.value =
+            product.name;
+
+
+        option.dataset.price =
+            product.price;
+
+
+        option.dataset.icon =
+            product.icon;
+
+
+        option.textContent =
+            `${product.name} — ${money(product.price)}`;
+
+
+        hamper.appendChild(option);
+
+    });
+
+
+    updateSummary();
+
+}
+
+
+/* =========================================================
+   UPDATE SUMMARY
+========================================================= */
+
+function updateSummary() {
+
+    const option =
+        hamper.options[
+            hamper.selectedIndex
+        ];
+
+
+    if (!option ||
+        !option.dataset.price) {
+
+        document.getElementById(
+            "summaryName"
+        ).textContent =
+            "Select a hamper";
+
+
+        document.getElementById(
+            "summaryFestival"
+        ).textContent =
+            festival.value ||
+            "Your selection will appear here.";
+
+
+        document.getElementById(
+            "summaryIcon"
+        ).textContent =
+            "🎁";
+
+
+        document.getElementById(
+            "summaryPrice"
+        ).textContent =
+            "₹0";
+
+
+        document.getElementById(
+            "summaryQuantity"
+        ).textContent =
+            quantity.value;
+
+
+        document.getElementById(
+            "summaryTotal"
+        ).textContent =
+            "₹0";
+
+
+        return;
+
+    }
+
+
+    const price =
+        Number(option.dataset.price);
+
+
+    const qty =
+        Number(quantity.value);
+
+
+    const total =
+        price * qty;
+
+
+    document.getElementById(
+        "summaryName"
+    ).textContent =
+        option.value;
+
+
+    document.getElementById(
+        "summaryFestival"
+    ).textContent =
+        festival.value;
+
+
+    document.getElementById(
+        "summaryIcon"
+    ).textContent =
+        option.dataset.icon || "🎁";
+
+
+    document.getElementById(
+        "summaryPrice"
+    ).textContent =
+        money(price);
+
+
+    document.getElementById(
+        "summaryQuantity"
+    ).textContent =
+        qty;
+
+
+    document.getElementById(
+        "summaryTotal"
+    ).textContent =
+        money(total);
+
+}
+
+
+/* =========================================================
+   FESTIVAL CHANGE
+========================================================= */
+
+festival.addEventListener(
+    "change",
+    function() {
+
+        populateHampers(
+            festival.value
+        );
+
+    }
+);
+
+
+/* =========================================================
+   HAMPER CHANGE
+========================================================= */
+
+hamper.addEventListener(
+    "change",
+    updateSummary
+);
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+document
+    .getElementById("plus")
+    .addEventListener(
+        "click",
+        function() {
+
+            let value =
+                Number(quantity.value);
+
+
+            if (value < 100) {
+
+                value++;
+
+            }
+
+
+            quantity.value =
+                value;
+
+
+            updateSummary();
+
+        }
+    );
+
+
+document
+    .getElementById("minus")
+    .addEventListener(
+        "click",
+        function() {
+
+            let value =
+                Number(quantity.value);
+
+
+            if (value > 1) {
+
+                value--;
+
+            }
+
+
+            quantity.value =
+                value;
+
+
+            updateSummary();
+
+        }
+    );
+
+
+/* =========================================================
+   URL PRODUCT
+========================================================= */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const urlProduct =
+    params.get("product");
+
+const urlFestival =
+    params.get("festival");
+
+
+if (urlFestival) {
+
+    festival.value =
+        urlFestival;
+
+
+    populateHampers(
+        urlFestival
+    );
+
+
+    if (urlProduct) {
+
+        hamper.value =
+            urlProduct;
+
+        updateSummary();
+
+    }
+
+}
+
+
+/* =========================================================
+   CUSTOM ORDER
+========================================================= */
+
+if (params.get("custom") === "true") {
+
+    festival.value =
+        "Custom Hamper";
+
+
+    hamper.innerHTML = `
+
+        <option value="Custom Hamper">
+            Custom Hamper
+        </option>
+
+    `;
+
+    updateSummary();
+
+}
+
+
+/* =========================================================
+   FORM SUBMIT
+========================================================= */
+
+document
+    .getElementById("orderForm")
+    .addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            if (!hamper.value) {
+
+                alert(
+                    "Please select a hamper."
+                );
+
+                return;
+
+            }
+
+
+            const name =
+                document.getElementById(
+                    "customerName"
+                ).value.trim();
+
+
+            const phone =
+                document.getElementById(
+                    "customerPhone"
+                ).value.trim();
+
+
+            const email =
+                document.getElementById(
+                    "customerEmail"
+                ).value.trim();
+
+
+            const address =
+                document.getElementById(
+                    "address"
+                ).value.trim();
+
+
+            const city =
+                document.getElementById(
+                    "city"
+                ).value.trim();
+
+
+            const pincode =
+                document.getElementById(
+                    "pincode"
+                ).value.trim();
+
+
+            const deliveryDate =
+                document.getElementById(
+                    "deliveryDate"
+                ).value;
+
+
+            const giftMessage =
+                document.getElementById(
+                    "giftMessage"
+                ).value.trim();
+
+
+            const option =
+                hamper.options[
+                    hamper.selectedIndex
+                ];
+
+
+            const price =
+                Number(option.dataset.price || 0);
+
+
+            const qty =
+                Number(quantity.value);
+
+
+            const total =
+                price * qty;
+
+
+            let message =
+
+                "🌸 *SAJAWAT HAMPERS - NEW ORDER*%0A" +
+
+                "━━━━━━━━━━━━━━━━━━━━%0A%0A" +
+
+                "👤 *CUSTOMER DETAILS*%0A" +
+
+                "Name: " +
+                encodeURIComponent(name) +
+                "%0A" +
+
+                "Mobile: " +
+                encodeURIComponent(phone) +
+                "%0A" +
+
+                "Email: " +
+                encodeURIComponent(
+                    email || "Not provided"
+                ) +
+
+                "%0A%0A" +
+
+                "🎁 *ORDER DETAILS*%0A" +
+
+                "Festival: " +
+                encodeURIComponent(
+                    festival.value
+                ) +
+
+                "%0A" +
+
+                "Hamper: " +
+                encodeURIComponent(
+                    hamper.value
+                ) +
+
+                "%0A" +
+
+                "Quantity: " +
+                qty +
+
+                "%0A" +
+
+                "Price: " +
+                encodeURIComponent(
+                    money(price)
+                ) +
+
+                "%0A" +
+
+                "Total: " +
+                encodeURIComponent(
+                    money(total)
+                ) +
+
+                "%0A%0A" +
+
+                "📍 *DELIVERY ADDRESS*%0A" +
+
+                encodeURIComponent(
+                    address
+                ) +
+
+                "%0A" +
+
+                encodeURIComponent(
+                    city
+                ) +
+
+                " - " +
+
+                encodeURIComponent(
+                    pincode
+                ) +
+
+                "%0A%0A" +
+
+                "📅 Delivery Date: " +
+
+                encodeURIComponent(
+                    deliveryDate ||
+                    "To be discussed"
+                ) +
+
+                "%0A%0A" +
+
+                "💌 *GIFT MESSAGE*%0A" +
+
+                encodeURIComponent(
+                    giftMessage ||
+                    "No gift message"
+                ) +
+
+                "%0A%0A" +
+
+                "Please confirm my order. Thank you!";
+
+
+            document.getElementById(
+                "successBox"
+            ).style.display =
+                "block";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                WHATSAPP_NUMBER +
+                "?text=" +
+                message;
+
+
+            /*
+               DIRECT WHATSAPP
+
+               No iframe.
+               No payment page.
+               No blocked checkout page.
+            */
+
+            window.location.href =
+                whatsappURL;
+
+        }
+    );
+
+
+updateSummary();
+
+</script>
 
 </body>
 
